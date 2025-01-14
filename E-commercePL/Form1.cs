@@ -8,19 +8,19 @@ namespace E_commercePL
         public LoginForm()
         {
             InitializeComponent();
-           Login = new LoginServices();
+            Login = new LoginServices();
 
         }
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            string useremail =email.Text;
+            string useremail = email.Text;
             string userpassword = password.Text;
             int userrole;
             bool IsAuth = Login.CheckUserExist(useremail, userpassword);
-            if (IsAuth) 
+            if (IsAuth)
             {
-                userrole=Login.UserOradmin(useremail,userpassword);
+                userrole = Login.UserOradmin(useremail, userpassword);
                 if (userrole == 1)
                 {
                     MessageBox.Show("user is admin");
@@ -41,6 +41,14 @@ namespace E_commercePL
                 password.Clear();
             }
 
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            Registeration registeration = new Registeration();
+            this.Hide();
+            registeration.Show();
+            registeration.FormClosed += (s,args) =>this.Show();
         }
     }
 }

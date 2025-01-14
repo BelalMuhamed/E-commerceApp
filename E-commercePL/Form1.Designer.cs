@@ -151,6 +151,7 @@
             btnRegister.Size = new Size(155, 45);
             btnRegister.TabIndex = 3;
             btnRegister.Text = "Register";
+            btnRegister.Click += btnRegister_Click;
             // 
             // LoginForm
             // 

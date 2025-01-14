@@ -8,7 +8,7 @@ namespace E_commerceDAL
         SqlConnection con;
         public DbContext()
         {
-            con = new SqlConnection("Server=DESKTOP-BE6MD1V;Database=E-commerceWindowsFromApp;Trusted_Connection=True;TrustServerCertificate=True;");
+            con = new SqlConnection("Server=MOHAMEDKHALED\\SQLEXPRESS;Database=E-commerceWindowsFromApp;Trusted_Connection=True;TrustServerCertificate=True;");
         }
         public DataTable ExecuteQuery(string CommandText)
         {
@@ -26,7 +26,6 @@ namespace E_commerceDAL
             int RowAffected = SelectedCommand.ExecuteNonQuery();
             con.Close();
             return RowAffected;
-
         }
         public bool DoesUserExist(string email, string password)
         {
