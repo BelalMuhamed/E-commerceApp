@@ -24,6 +24,10 @@ namespace E_commercePL
                 if (userrole == 1)
                 {
                     MessageBox.Show("user is admin");
+                    Frm_IL frm_IL = new Frm_IL();
+                    frm_IL.Show();
+                    this.Hide();
+                    frm_IL.FormClosed += (s, args) => this.Show();
                     email.Clear();
                     password.Clear();
                 }
