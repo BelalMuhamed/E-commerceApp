@@ -150,7 +150,7 @@ namespace E_commerceBLL.Services
 
         #region Get Categories
 
-        public DataTable GetCategories()
+        public DataTable GetAll()
         {
             try
             {
@@ -171,6 +171,31 @@ namespace E_commerceBLL.Services
             catch (Exception ex)
             {
                 // Log or handle the exception as needed
+                throw new Exception($"Error: {ex.Message}");
+            }
+        }
+
+        #endregion
+
+        #region Get Category products
+
+        public DataTable GetCategoryProducts(int id)
+        {
+            try
+            {
+                DataTable dataTable = _context.ExecuteQuery($"SELECT p.ProductId,c.CategoryId,p.ProductName,p.Price FROM Categories as c join Products as p on p.CategoryId = c.CategoryId where p.CategoryId = {id}");
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    return dataTable;
+                }
+                else
+                {
+                    return new DataTable();
+                }
+            }
+            catch (Exception ex)
+            {
                 throw new Exception($"Error: {ex.Message}");
             }
         }

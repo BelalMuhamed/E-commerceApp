@@ -16,20 +16,20 @@ namespace E_commercePL
 {
     public partial class Categories : Form
     {
-        private readonly CategoriesServices categoriesServices;
+        private readonly CategoryServices categoryServices;
         private readonly FavoriteServices favoriteServices;
         public readonly int _userId;
         public Categories(int userId)
         {
             InitializeComponent();
-            this.categoriesServices = new CategoriesServices();
+            this.categoryServices = new CategoryServices();
             this.favoriteServices = new FavoriteServices();
             this._userId = userId;
         }
 
         private void Categories_Load(object sender, EventArgs e)
         {
-            comboBox1.DataSource = categoriesServices.GetAll();
+            comboBox1.DataSource = categoryServices.GetAll();
             comboBox1.DisplayMember = "CategoryName";
             comboBox1.ValueMember = "CategoryId";
             dataGridView1.DataSource = new DataTable();
@@ -49,7 +49,7 @@ namespace E_commercePL
         {
             int categoryId = Convert.ToInt32(((DataRowView)comboBox1.SelectedItem)["CategoryId"]);
 
-            dataGridView1.DataSource = categoriesServices.GetCategoryProducts(categoryId);
+            dataGridView1.DataSource = categoryServices.GetCategoryProducts(categoryId);
             dataGridView1.Columns["ProductId"].Visible = false;
             dataGridView1.Columns["CategoryId"].Visible = false;
         }

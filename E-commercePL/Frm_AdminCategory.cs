@@ -23,7 +23,7 @@ namespace E_commercePL
         private void RefreshCategoryGrid()
         {
             // Update the data source for the DataGridView
-            dgv_categories.DataSource = _services.GetCategories();
+            dgv_categories.DataSource = _services.GetAll();
 
             // Hide the 'CategoryId' column if it exists
             if (dgv_categories.Columns.Contains("CategoryId"))
