@@ -19,6 +19,7 @@ namespace E_commercePL
         private readonly CategoryServices categoryServices;
         private readonly FavoriteServices favoriteServices;
         public readonly int _userId;
+        ProductServices productServices;
         public Categories(int userId)
         {
             InitializeComponent();
@@ -32,8 +33,7 @@ namespace E_commercePL
             comboBox1.DataSource = categoryServices.GetAll();
             comboBox1.DisplayMember = "CategoryName";
             comboBox1.ValueMember = "CategoryId";
-            dataGridView1.DataSource = new DataTable();
-
+            DataTable dt = new DataTable();
         }
         int id;
 
@@ -100,6 +100,11 @@ namespace E_commercePL
             Favourite favourite = new Favourite(_userId);
             favourite.Show();
             this.Hide();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

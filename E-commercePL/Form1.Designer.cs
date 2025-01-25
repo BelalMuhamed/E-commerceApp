@@ -160,7 +160,7 @@
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackColor = Color.White;
             BackgroundImage = Properties.Resources._3ac5e1c374f04535bdd0df23;
-            ClientSize = new Size(828, 746);
+            ClientSize = new Size(866, 751);
             Controls.Add(btnRegister);
             Controls.Add(btnlogin);
             Controls.Add(password);

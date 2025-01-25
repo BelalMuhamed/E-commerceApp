@@ -8,7 +8,7 @@ namespace E_commerceDAL
         SqlConnection con;
         public DbContext()
         {
-            con = new SqlConnection("Server=khaledayman\\MSSQLSERVER01;Database=E-commerceWindowsFromApp;Trusted_Connection=True;TrustServerCertificate=True;");
+            con = new SqlConnection("Server= MOHAMEDKHALED\\SQLEXPRESS;Database=E-commerceWindowsFromApp;Trusted_Connection=True;TrustServerCertificate=True;");
         }
         public DataTable ExecuteQuery(string CommandText)
         {

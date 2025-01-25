@@ -59,6 +59,7 @@
             btn_products.Size = new Size(252, 45);
             btn_products.TabIndex = 10;
             btn_products.Text = "Products";
+            btn_products.Click += btn_products_Click;
             // 
             // btn_Categories
             // 

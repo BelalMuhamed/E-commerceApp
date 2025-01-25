@@ -242,6 +242,7 @@
             ForeColor = Color.Transparent;
             Name = "Registeration";
             Text = "Registeration";
+            Load += Registeration_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDown_age).EndInit();
             ResumeLayout(false);
             PerformLayout();

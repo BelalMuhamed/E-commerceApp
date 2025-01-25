@@ -31,12 +31,17 @@ namespace E_commercePL
         }
         private void btn_register_Click(object sender, EventArgs e)
         {
-            int rowAffected =  userServices.Add(txt_name.Text, txt_password.Text,txt_email.Text , (int)numericUpDown_age.Value, txt_address.Text );
+            int rowAffected = userServices.Add(txt_name.Text, txt_password.Text, txt_email.Text, (int)numericUpDown_age.Value, txt_address.Text);
             if (rowAffected > 0)
             {
                 MessageBox.Show("Registeration Successfully");
-            }   
-           
+            }
+
+        }
+
+        private void Registeration_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

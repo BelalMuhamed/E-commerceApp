@@ -16,14 +16,23 @@ namespace E_commercePL
         {
             InitializeComponent();
         }
-            
-        
+
+
 
         private void btn_Categories_Click(object sender, EventArgs e)
         {
             Frm_AdminCategory frm_AdminCategory = new Frm_AdminCategory();
             this.Hide();
             frm_AdminCategory.Show();
+            frm_AdminCategory.FormClosed += (s, args) => this.Show();
+        }
+
+        private void btn_products_Click(object sender, EventArgs e)
+        {
+            AdminProduct frm_Product = new AdminProduct();
+            this.Hide();
+            frm_Product.Show();
+            frm_Product.FormClosed += (s, args) => this.Show();
         }
     }
 }
