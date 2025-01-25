@@ -58,24 +58,24 @@ namespace E_commercePL
         {
             try
             {
-                // Validate inputs
+                
                 if (_userId <= 0 || id <= 0)
                 {
                     MessageBox.Show("Invalid user or product ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Create a new Favorite object
+                
                 Favorite favorite = new()
                 {
                     UserId = _userId,
                     ProductId = id
                 };
 
-                // Attempt to add the favorite
+                
                 int result = favoriteServices.AddToFavorite(favorite);
 
-                // Check the result
+                
                 if (result > 0)
                 {
                     MessageBox.Show("Product added to favorites successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -87,10 +87,10 @@ namespace E_commercePL
             }
             catch (Exception ex)
             {
-                // Log the exception (optional, for debugging purposes)
+                
                 Console.WriteLine($"An error occurred: {ex.Message}");
 
-                // Display a user-friendly error message
+                
                 MessageBox.Show("An unexpected error occurred. Please contact support.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

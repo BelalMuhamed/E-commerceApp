@@ -154,23 +154,23 @@ namespace E_commerceBLL.Services
         {
             try
             {
-                // Execute the query to get all categories
+                
                 DataTable dataTable = _context.ExecuteQuery("SELECT * FROM Categories");
 
-                // Check if data is returned
+                
                 if (dataTable.Rows.Count > 0)
                 {
                     return dataTable;
                 }
                 else
                 {
-                    // If no data found, return an empty DataTable or null based on preference
-                    return new DataTable(); // Or return null;
+                    
+                    return new DataTable(); 
                 }
             }
             catch (Exception ex)
             {
-                // Log or handle the exception as needed
+                
                 throw new Exception($"Error: {ex.Message}");
             }
         }

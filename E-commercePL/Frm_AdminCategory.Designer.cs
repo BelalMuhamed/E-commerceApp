@@ -51,7 +51,7 @@
             dgv_categories.Location = new Point(0, 0);
             dgv_categories.Name = "dgv_categories";
             dgv_categories.RowHeadersWidth = 51;
-            dgv_categories.Size = new Size(186, 223);
+            dgv_categories.Size = new Size(258, 447);
             dgv_categories.TabIndex = 0;
             dgv_categories.RowHeaderMouseDoubleClick += dgv_categories_RowHeaderMouseDoubleClick;
             // 

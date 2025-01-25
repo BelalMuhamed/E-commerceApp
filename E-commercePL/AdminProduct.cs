@@ -31,6 +31,9 @@ namespace E_commercePL
             cb_category.DataSource = dt2;
             cb_category.DisplayMember = "CategoryName";
             cb_category.ValueMember = "CategoryId";
+            button1.Visible = true;
+            button2.Visible = false;
+            button3.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -41,6 +44,11 @@ namespace E_commercePL
                 MessageBox.Show("Updated Successfully");
                 DataTable dt = services.GetAll();
                 dgv_adminProduct.DataSource = dt;
+                txt_price.Text = txt_name.Text =  " ";
+                cb_category.SelectedValue = -1;
+                button1.Visible = true;
+                button2.Visible = false;
+                button3.Visible = false;
             }
         }
 
@@ -52,15 +60,20 @@ namespace E_commercePL
                 MessageBox.Show("Added Successfully");
                 DataTable dt = services.GetAll();
                 dgv_adminProduct.DataSource = dt;
+                txt_price.Text = txt_name.Text = " ";
+                cb_category.SelectedValue = -1;
             }
         }
         int id;
         private void dgv_adminProduct_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            button1.Visible = false;
+            button2.Visible = true;
+            button3.Visible = true;
             id = (int)dgv_adminProduct.SelectedRows[0].Cells["ProductId"].Value;
             txt_name.Text = dgv_adminProduct.SelectedRows[0].Cells["ProductName"].Value.ToString();
             txt_price.Text = dgv_adminProduct.SelectedRows[0].Cells["Price"].Value.ToString();
-            cb_category.SelectedValue = dgv_adminProduct.SelectedRows[0].Cells["CategoryId"].Value.ToString();
+            cb_category.SelectedValue = dgv_adminProduct.SelectedRows[0].Cells["CategoryId"].Value??null;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -71,6 +84,11 @@ namespace E_commercePL
                 MessageBox.Show("Deleted Successfully");
                 DataTable dt = services.GetAll();
                 dgv_adminProduct.DataSource = dt;
+                txt_price.Text = txt_name.Text = " ";
+                cb_category.SelectedValue = -1;
+                button1.Visible = true;
+                button2.Visible = false;
+                button3.Visible = false;
             }
         }
     }
